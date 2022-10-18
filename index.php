@@ -44,10 +44,10 @@
 //endregion
 
 //region обратная ссылка - найти то же самое, что и в N-ой скобочной группе
-$mas = [];
+//$mas = [];
 //$regexp1 = `/(?<quote>[\'\"])(.*?)\k<quote>/`; // обращение по имени группы
 //preg_match_all('/([\'\"])(.*?)\1/', "He said: \"She's the one!\"", $mas);
-print_r($mas);
+//print_r($mas);
 //endregion
 
 //region условные подмаски
@@ -58,4 +58,19 @@ print_r($mas);
 
 //region утверждения (гений решил, что сначала условные подмаски с УТВЕРЖДЕНИЯМИ!!!, ток потом утверждения)
 //Утверждения - это проверки касательно символов, идущих до или после текущей позиции сопоставления, ничего при этом не поглощая (никакие символы исходного текста не ставятся в соответствие утверждениям).
+//echo preg_match('/\w+(?=;)/', 'asdasd;') . PHP_EOL;
+//echo preg_match('/\w+(?=;)/', 'asdasd') . PHP_EOL;
+//echo preg_match('/foo(?!bar)/', 'foobar') . PHP_EOL;
+//echo preg_match('/foo(?!bar)/', 'foo') . PHP_EOL;
+
+//echo preg_match('/(?<=bar)foo/', 'foobar') . PHP_EOL;
+//echo preg_match('/(?<=bar)foo/', 'barfoo') . PHP_EOL;
+//echo preg_match('/(?<!bar)foo/', 'barfoo') . PHP_EOL;
+//echo preg_match('/(?<!bar)foo/', 'foobar') . PHP_EOL;
+//endregion
+
+//region захватывающие квантификаторы
+echo preg_match('/.*+abc/', 'aaaabc') . PHP_EOL;
+echo preg_match('/.*+abc/', 'abc') . PHP_EOL;
+echo preg_match('/.*+/', 'abc') . PHP_EOL;
 //endregion
